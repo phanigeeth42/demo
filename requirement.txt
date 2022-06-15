@@ -2,3 +2,5 @@ gcsfs
 google-cloud-bigquery
 pandas
 pytz
+google-cloud-pubsub
+apache-beam
