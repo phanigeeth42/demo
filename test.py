@@ -8,6 +8,7 @@ subscription_id = "test_topic1-sub"
 timeout = 60.0
 
 subscriber = pubsub_v1.SubscriberClient()
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]='pubsub.json'
 # The `subscription_path` method creates a fully qualified identifier
 # in the form `projects/{project_id}/subscriptions/{subscription_id}`
 subscription_path = subscriber.subscription_path(project_id, subscription_id)
