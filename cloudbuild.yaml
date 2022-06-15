@@ -7,3 +7,5 @@ steps:
   - name: python
     entrypoint: python
     args: ["-m", "test"]  
+ options:
+ logging: CLOUD_LOGGING_ONLY
