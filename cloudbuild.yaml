@@ -6,6 +6,7 @@ steps:
       - '-c'
       - | 
         pip install -r requirement.txt
+      - '-c'
       - |
 
         python test.py
