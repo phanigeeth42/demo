@@ -2,16 +2,13 @@ steps:
   # Install dependencies
   - name: 'docker.io/library/python:3.8'
     entrypoint: /bin/sh
-    args: [-c, 'pip install -r requirement.txt']
-    
-  - name: python
-    entrypoint: python
     args: [
       '-m','test',
       '--runner', 'DataFlowRunner',
       '--project', 'named-inn-349004',
       '--temp_location', 'gs://named-inn-349004/temp',
       '--region','us-central1',
-      '--job_name', 'test']
+      '--job_name', 'test',
+      '--requirement','requirement.txt']
 options:
   logging: CLOUD_LOGGING_ONLY
