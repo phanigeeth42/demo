@@ -5,7 +5,7 @@ steps:
     args: 
       - '-c'
       - | 
-        dataflow.sh
+        dataflow
         
 options:
   logging: CLOUD_LOGGING_ONLY
