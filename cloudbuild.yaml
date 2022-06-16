@@ -5,16 +5,7 @@ steps:
     args: 
       - '-c'
       - | 
-        pip install -r requirement.txt
-      - '-c'
-      - |
-
-        python test.py
-        --runner=DataFlowRunner
-        --project=named-inn-349004
-        --temp_location=gs://named-inn-349004/temp
-        --region=us-central1
-        --job_name test
+        dataflow.sh
         
 options:
   logging: CLOUD_LOGGING_ONLY
