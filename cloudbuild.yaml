@@ -1,6 +1,6 @@
 steps:
   # Install dependencies
-  - name: python
+  - name: python-3.7.8
     entrypoint: pip
     args: ["install", "-r", "requirement.txt", "--user"]
     
