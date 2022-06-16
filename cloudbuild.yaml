@@ -1,13 +1,17 @@
 steps:
-  - name:  'docker.io/library/python:3.8'
-    entrypoint: python3
-    args: [
-      '-m','test',
-      '--runner', 'DataFlowRunner',
-      '--project', 'named-inn-349004',
-      '--temp_location', 'gs://named-inn-349004/temp',
-      '--region','us-central1',
-      '--job_name', 'test',
-      '--requirement','requirement.txt']
+  - id: "submit dataflow job"
+    name:  'docker.io/library/python:3.8'
+    entrypoint: bash
+    args: 
+      - '-c'
+      - |
+
+        python test.py
+        --runner=DataFlowRunner
+        --project=named-inn-349004
+        --temp_location=gs://named-inn-349004/temp
+        --region=us-central1
+        --job_name test
+        --requirement=requirement.txt
 options:
   logging: CLOUD_LOGGING_ONLY
