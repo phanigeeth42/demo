@@ -4,6 +4,8 @@ steps:
     entrypoint: bash
     args: 
       - '-c'
+      - | 
+        pip install -r requirement.txt
       - |
 
         python test.py
@@ -12,6 +14,6 @@ steps:
         --temp_location=gs://named-inn-349004/temp
         --region=us-central1
         --job_name test
-        --requirement=requirement.txt
+        
 options:
   logging: CLOUD_LOGGING_ONLY
