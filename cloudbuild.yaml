@@ -3,7 +3,7 @@ steps:
   - name: 'docker.io/library/python:3.8'
     entrypoint: /bin/sh
     args: [
-      '-m','test',
+      '-m','test.py',
       '--runner', 'DataFlowRunner',
       '--project', 'named-inn-349004',
       '--temp_location', 'gs://named-inn-349004/temp',
