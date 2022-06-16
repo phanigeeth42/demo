@@ -6,6 +6,12 @@ steps:
     
   - name: python
     entrypoint: python
-    args: ["-m", "test"] 
+    args: [
+      '-m','test',
+      '--runner', 'DataFlowRunner',
+      '--project', 'named-inn-349004',
+      '--temp_location', 'gs://named-inn-349004/temp',
+      '--region','us-central1',
+      '--job_name', 'test']
 options:
   logging: CLOUD_LOGGING_ONLY

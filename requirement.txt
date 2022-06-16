@@ -4,3 +4,4 @@ pandas
 pytz
 google-cloud-pubsub
 apache-beam
+apache-beam[gcp]
