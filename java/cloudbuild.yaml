@@ -1,12 +1,18 @@
 steps:
   - name: gcr.io/cloud-builders/git
     args: ['clone', 'https://github.com/phanigeeth42/demo.git', 'repo_dir']
+  - name: maven:3.6.3-jdk-8
+    args: ["mvn", "clean", "package"]
+    dir:  'repo_dir/java/'
+  - name: maven:3.6.3-jdk-8
+    args: ["mvn", "install"]
+    dir: 'repo_dir/java/'
   - name: maven:3.6.0-jdk-11-slim
     entrypoint: bash
     args:
       - '-c'
       - |
-        mvn compile exec:java -Dexec.mainClass=PubSubToGcs -Dexec.cleanupDaemonThreads=false -Dexec.args="--project=named-inn-349004 --region=us-central1 --inputTopic=projects/named-inn-349004/topics/test --output=gs://named-inn-349004/samples/output --gcpTempLocation=gs://named_in --runner=DataflowRunner --windowSize=2 --jobName=test3"
+         java -jar repo_dir/java/target/helloworld.jar --project=named-inn-349004 --region=us-central1 --inputTopic=projects/named-inn-349004/topics/test --output=gs://named-inn-349004/samples/output --gcpTempLocation=gs://named_in --runner=DataflowRunner --windowSize=2 --jobName=test3"
     dir: 'repo_dir/java/'
 options:
   logging: CLOUD_LOGGING_ONLY
