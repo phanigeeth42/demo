@@ -1,0 +1,12 @@
+steps:
+  - id: "submit dataflow job"
+    name:  maven:3.6.3-jdk-8
+    entrypoint: bash
+    args: 
+      - '-c'
+      - | 
+        bash dataflow.sh
+        
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 120s
