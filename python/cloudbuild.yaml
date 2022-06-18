@@ -1,4 +1,6 @@
 steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['clone', 'https://github.com/phanigeeth42/demo.git', 'repo_dir']
   - id: "submit dataflow job"
     name:  'docker.io/library/python:3.8'
     entrypoint: bash
@@ -6,6 +8,7 @@ steps:
       - '-c'
       - | 
         bash dataflow.sh
+    dir: 'repo_dir/python'
         
 options:
   logging: CLOUD_LOGGING_ONLY
