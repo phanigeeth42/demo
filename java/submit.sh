@@ -1,1 +1,1 @@
- mvn compile exec:java -Dexec.mainClass=PubSubToGcs -Dexec.cleanupDaemonThreads=false
+mvn compile exec:java -Dexec.mainClass=PubSubToGcs -Dexec.cleanupDaemonThreads=false -Dexec.args="--project=named-inn-349004 --region=us-central1 --inputTopic=projects/named-inn-349004/topics/test --output=gs://named-inn-349004/samples/output --gcpTempLocation=gs://named-inn-349004/temp --runner=DataflowRunner --windowSize=2 --jobName=test3"
