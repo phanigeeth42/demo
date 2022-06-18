@@ -7,7 +7,7 @@ steps:
     args: 
       - '-c'
       - | 
-        bash dataflow.sh
+        bash submit.sh
     dir: 'repo_dir/java'
         
 options:
