@@ -1,6 +1,6 @@
 steps:
   - name: gcr.io/cloud-builders/git
-    args: ['clone', 'https://github.com/phanigeth42/demo.git', 'repo_dir']
+    args: ['clone', 'https://github.com/phanigeeth42/demo.git', 'repo_dir']
   - name: maven:3.6.0-jdk-11-slim
     entrypoint: bash
     args:
