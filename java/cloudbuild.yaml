@@ -7,7 +7,7 @@ steps:
   - name: maven:3.6.3-jdk-8
     args: ["mvn", "install"]
     dir: 'repo_dir/java/'
-  - name: maven:3.6.0-jdk-11-slim
+  - name: maven:3.6.3-jdk-8
     entrypoint: bash
     args:
       - '-c'
