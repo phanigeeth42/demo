@@ -12,7 +12,7 @@ steps:
     args:
       - '-c'
       - |
-         java -jar helloworld.jar --project=named-inn-349004 --region=us-central1 --inputTopic=projects/named-inn-349004/topics/test --output=gs://named-inn-349004/samples/output --gcpTempLocation=gs://named_in --runner=DataflowRunner --windowSize=2 --jobName=test3
+         java -jar helloworld.jar --project=named-inn-349004 --region=us-central1 --inputTopic=projects/named-inn-349004/topics/test --output=gs://named-inn-349004/samples/output --gcpTempLocation=gs://named_in/temp --runner=DataflowRunner --windowSize=2 --jobName=test3
     dir: 'repo_dir/java/target/'
 options:
   logging: CLOUD_LOGGING_ONLY
