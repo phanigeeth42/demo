@@ -8,7 +8,7 @@ steps:
       - '-c'
       - | 
         bash dataflow.sh
-    dir:'repo_dir/java'
+    dir: 'repo_dir/java'
         
 options:
   logging: CLOUD_LOGGING_ONLY
