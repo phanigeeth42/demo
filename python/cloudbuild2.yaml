@@ -7,7 +7,7 @@ steps:
     args: 
       - '-c'
       - | 
-        bash dataflow.sh
+        bash dataflow2.sh
     dir: 'repo_dir/python'
         
 options:
