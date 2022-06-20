@@ -1,0 +1,15 @@
+steps:
+  - name: gcr.io/cloud-builders/git
+    args: ['clone', 'https://github.com/phanigeeth42/demo.git', 'repo_dir']
+  - id: "submit dataflow job"
+    name:  'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args: 
+      - '-c'
+      - | 
+        bash dataflow.sh
+    dir: 'repo_dir/python'
+        
+options:
+  logging: CLOUD_LOGGING_ONLY
+timeout: 120s
